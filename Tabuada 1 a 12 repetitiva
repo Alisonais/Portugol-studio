@@ -1,0 +1,40 @@
+programa
+{
+	funcao inicio ()
+	{inteiro a,i,s=0 caracter r
+
+	
+	
+faca	{
+	s=0
+	faca {
+	escreva("digite um numero de 1 a 12: ")	
+	leia(a)
+	} enquanto (a<1 ou a>12)
+	escreva("\n")
+	escreva("_________________\n")
+	para (i=0;i<=10;i+=1){
+		se (s<10)
+		escreva("| ",a," x ",i,"  =   ",s," |\n")
+			se (s>10 e s<100 e i <10)
+				escreva("| ",a," x ",i,"  =  ",s," |\n")
+					se(i==10 e s<100)
+						escreva("| ",a," x ",i," =  ",s," |\n")
+							se(i==9 e s>=100)
+								escreva("| ",a," x ",i,"  = ",s," |\n")
+								se(i==10 e s>=100)
+									escreva("| ",a," x ",i," = ",s," |\n")
+		s=s+a
+
+	
+					   	}
+		escreva("_________________\n\n")
+		escreva("deseja colocar outro numero?[S/N]: ")
+		leia(r)
+		escreva("\n\n")
+		} 
+	enquanto (r=='s')
+		
+		escreva("obrigado..")
+	}
+}
