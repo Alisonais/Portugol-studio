@@ -1,0 +1,39 @@
+programa
+{
+	funcao inicio (){
+	inteiro valor
+	inteiro u, d, c, m, n
+	
+	
+	escreva("digite um valor de 1 a 9999: ")
+	leia (valor)
+	
+	u = valor
+	//	escreva("\n",u," ")	
+	d = valor0/10
+	//	escreva(d," ")
+	c = valor00/100
+	//	escreva(c," ")
+	m = valor/1000
+	//	escreva(m," \n\n")
+se (m==c e c==d e d==u){
+	escreva("\na varialvel ",valor," tem todos os numeros iguais")
+	}senao {
+		se (m==0 e c==d e d==u){
+			escreva("\na varialvel ",valor," tem todos os numeros iguais")
+		} senao {
+			se (m==0 e c==0 e d==u){
+				escreva("\na varialvel ",valor," tem todos os numeros iguais")
+			} senao {
+				se (m==0 e c==0 e d==0){
+					escreva("\na varialvel ",valor," tem todos os numeros iguais")
+				} senao {
+					escreva("\na varialvel ",valor," não tem todos os numeros iguais")
+				}
+			}
+		}
+	}
+
+	}
+	
+}
