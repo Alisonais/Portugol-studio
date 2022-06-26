@@ -1,0 +1,112 @@
+programa
+{// quadrado magico
+//11 04 17 10 23
+//24 12 05 18 06
+//07 25 13 01 19
+//20 08 21 14 02
+//03 16 09 22 15
+
+// ----- variaveis globais -----
+const inteiro tam = 5
+		inteiro jogo[tam][tam]={{11,04,17,10,23},{24,12,05,18,06},{07,25,13,01,19},{20,08,21,14,02},{03,16,09,22,15}}
+		inteiro l,c,total=0,igual=0,a=0,b=0
+		inteiro vetl [5], vetc[5]
+
+		
+	// ------ função para calcular a diagonal principal ------
+	funcao inteiro somaDiagonalP (){
+		inteiro soma = 0
+		para(l=0;l<tam;l++)
+		soma +=jogo[l][l]
+		retorne soma 
+	}
+	// -----função´para calcular a diagonal secundaria -----
+	funcao inteiro somaDiagonalS(){
+		inteiro soma = 0 
+		soma=0	
+	para(l=0;l<tam;l++)
+		soma += jogo[l][tam-1-l]
+		retorne soma
+	}
+	// ----- Função para somar e retornar o total da linha x -----
+	funcao inteiro somarlinha (inteiro x){
+		inteiro soma = 0
+		para(c=0;c<tam;c++)
+				soma += jogo [x][c]
+		retorne soma
+	}
+	//----- função para calcular e retornar a soma da linha x -----
+	funcao inteiro somarcoluna (inteiro x){
+	inteiro soma = 0
+		para(l=0;l<tam;l++)
+				soma += jogo [l][x]
+	retorne soma	
+	}
+	// ----- procedimento para calcular a soma de todas as linhas -----
+	funcao linhas(){
+		para(c=0;c<tam;c++){
+				vetl[c] = somarcoluna(c)
+				se (total != somarcoluna(c)){
+					igual=1
+					escreva("A linha ",c," é diferente!\n") 
+				
+			}
+		}
+	}
+	// ----- procedimento para calcular todas as colunas ------
+	funcao colunas(){
+		para(c=0;c<tam;c++){
+				vetc[c] = somarcoluna(c)
+				se (total != somarcoluna(c)){
+					igual=1
+					escreva("A coluna ",c," é diferente!\n") 
+				
+			}
+		}
+	}
+	// ----- procedimento de verificação do quadrado magico ----- 
+	funcao quadradoM (){
+		se (igual==0){
+			escreva("\n\n\tTemos um quadrado magico!\n\n")
+		} senao {
+			escreva("\n\n\tNão temos um quadrado magico!\n\n")
+		}
+	}
+	// ----- procedimento de impressão do quadrado -----
+	funcao impressao(){
+		escreva(vetc[0]," ",vetc[1]," ",vetc[2]," ",vetc[3]," ",vetc[4],"   ",b,"\n\n")
+
+	para(l=0;l<tam;l++){
+		para(c=0;c<tam;c++){
+			se (jogo[l][c]<10)
+			escreva("0")
+				escreva(jogo[l][c]," ")
+			
+		}
+			escreva("  ",vetl[l],"\n")
+		
+	}
+
+	escreva("\n                 ",a,"\n\n")
+	}
+	
+	funcao inicio(){
+		//------ diagonal principal -----	
+	total = somaDiagonalP()
+	a = somaDiagonalP()
+		//----- diagonal secundaria -----
+	se (total != somaDiagonalS()){
+		igual=1
+		escreva("diagonal secundaria diferente!\n")
+	}
+	b = somaDiagonalS()
+		//----- linhas -----
+		linhas()	
+		//----- colunas -----
+		colunas()
+		// ----- quadrado magico? -----
+		quadradoM()
+		//----- impressão do quadrado -----
+		impressao()	
+	}
+}
